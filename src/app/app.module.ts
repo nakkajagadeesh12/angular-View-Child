@@ -5,10 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { customDirective } from './hello.directive';
+import { CounterComponent } from './counter.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, HelloComponent, customDirective],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    CounterComponent,
+    customDirective,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
