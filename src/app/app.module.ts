@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { customDirective } from './hello.directive';
 import { CounterComponent } from './counter.component';
+import { ProfileComponent } from './profile.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -14,6 +15,7 @@ import { CounterComponent } from './counter.component';
     HelloComponent,
     CounterComponent,
     customDirective,
+    ProfileComponent,
   ],
   bootstrap: [AppComponent],
 })

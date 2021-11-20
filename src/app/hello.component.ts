@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { CounterComponent } from './counter.component';
 import { customDirective } from './hello.directive';
 
 @Component({
@@ -10,6 +11,7 @@ export class HelloComponent {
   @Input() name: string;
   @ViewChild('ref') ref: ElementRef;
   @ViewChild(customDirective) custDire: customDirective;
+  @ViewChild(CounterComponent) counterComp: CounterComponent;
   ngAfterViewInit() {
     console.log(this.ref.nativeElement);
     let ele = this.ref.nativeElement;
@@ -20,5 +22,9 @@ export class HelloComponent {
   clickHere(col) {
     console.log(col);
     this.custDire.setColor(col);
+  }
+
+  incHere() {
+    this.counterComp.increase();
   }
 }
