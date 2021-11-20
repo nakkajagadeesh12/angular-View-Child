@@ -4,9 +4,10 @@
   <button (click)="clickHere('red')">click</button>
   <counter></counter>
   <button (click)="incHere()">Click to Increment</button>
-  <profile
-    [name]="'Jagath'"
-    [age]="11"
-    [occupation]="'Software Engineer'"
-  ></profile>
+  <profile [name]="'Jagath'" [age]="25" [occupation]="'Software Engineer'">
+    <input type="text" placeholder="Enter" />
+  </profile>
+  <profile [name]="'Lokesh'" [age]="23" [occupation]="'Software Engineer'">
+    <input type="text" placeholder="Enter" />
+  </profile>
 </div>

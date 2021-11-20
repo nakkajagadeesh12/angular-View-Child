@@ -9,5 +9,6 @@ export class ProfileComponent {
   @Input() name: string;
   @Input() age: number;
   @Input() occupation: string;
+  
   constructor() {}
 }
