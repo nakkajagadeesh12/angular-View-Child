@@ -1,10 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { customDirective } from './hello.directive';
 
 @Component({
   selector: 'hello',
-  template: `<h1>Hello {{name}}!</h1>`,
-  styles: [`h1 { font-family: Lato; }`]
+  templateUrl: './hello.component.html',
+  styleUrls: ['./hello.component.css'],
 })
-export class HelloComponent  {
+export class HelloComponent {
   @Input() name: string;
+  @ViewChild('ref') ref: ElementRef;
+  @ViewChild(customDirective) custDire: customDirective;
+  ngAfterViewInit() {
+    console.log(this.ref.nativeElement);
+    let ele = this.ref.nativeElement;
+    ele.style.background = 'black';
+    ele.style.color = 'white';
+  }
+
+  clickHere(col) {
+    console.log(col);
+    this.custDire.setColor(col);
+  }
 }
